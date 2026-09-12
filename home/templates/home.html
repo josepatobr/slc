@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="home">    
+        <br><br>
+        <h1 class="titulo">SLC</h1>
+    
+        <div class="card-produto">  
+            {% for movie in movies %}
+                <div class="div-produto">
+                    <img src="{{ movie.movie_cover.url }}" width="300" height="300">
+                    <p class="inf_produto_titulo">{{ movie.title_movie }}</p>
+                    <p id="inf_produto">{{ movie.description }}</p>
+                    <a class="url_produto" href="{% url 'movie' movie.id %}" target="_blank">assistir filme</a>                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

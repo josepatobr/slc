@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SLC</title>
+        <link href="{% static 'css/home.css' %}" rel="stylesheet">
+        <link href="{% static 'css/base.css' %}" rel="stylesheet">
+        <link href="{% static 'css/signup.css' %}" rel="stylesheet">
+        <link href="{% static 'css/login.css' %}" rel="stylesheet">
+    </head>
+
+    <body class="body">
+
+        <main>
+            {% block content %}
+            {% endblock %}
+        </main>
+        
+       <nav class="navbar">
+            <div class="nav-logo">
+                <a href="{% url 'home' %}">
+                    <img class="logo" src="{% static 'logo_empresa/slc.png' %}" width="70" height="70" alt="Logo">
+                </a>            
+            </div>
+            <ul class="nav-links" id="nav-list">
+                {% if user.is_authenticated %}
+
+                {% else %}
+                    <li><a class="option_navbar" href="{% url 'login' %}">login</a></li>
+                {% endif %}
+                <li>
+
+                </li>
+            </ul>
+        </nav>
+
+    </body>
+</html>
+
+<script>
+    setInterval(function() {
+        console.clear();
+        debugger; 
+    }, 1000);
+
+
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'F12' || 
+            (event.ctrlKey && event.shiftKey && (event.key === 'I' || event.key === 'J' || event.key === 'C')) || 
+            (event.ctrlKey && event.key === 'U')) {
+            event.preventDefault();
+            alert('Esta ação não é permitida.');
+        }
+    });
+
+    document.addEventListener('contextmenu', function(event) {
+        event.preventDefault();
+    });
+</script>
