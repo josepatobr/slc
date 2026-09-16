@@ -1,0 +1,55 @@
+.body{
+    background-color: #111418;
+    scroll-behavior: smooth;
+}
+
+.title{
+    color: whitesmoke;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 50px;
+    text-align: center;
+}
+
+
+.description_movie{
+    border: 1px solid white;
+    color: white;
+    width: 63%;
+    text-align: center;
+    padding: 10px;
+}
+
+
+.card_recommend{
+    border: 1px solid white;
+    width: 30%;
+    display: flex;
+    left: 1300px;
+    position: relative;
+    bottom: 690px;
+    color: white;
+    height: 600px;
+}
+
+.title_recommend{
+    color: whitesmoke;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 40px;
+    display: flex;
+}
+.top_5_recommend{
+    color: white;
+    border: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
+    position: relative;
+}
+
+.video{
+    display: flex;
+    position: relative;
+    right: 150px;
+}

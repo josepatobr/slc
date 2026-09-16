@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="body">    
+        <br><br><br>
+        {% for movie in movies %}
+            <h1 class="title">{{ movie.title_movie }}</h1>
+        
+            <div class="card-movie">  
+                    <div class="div-movie">
+                        <video src="{{ movie.file_movie.url }}" class="video" width="80%" height="600"></video>
+                        <p class="description_movie">DESCRIÇÃO: {{ movie.description }}</p>
+                    </div>
+            </div>
+        {% endfor %}
+
+        <div class="card_recommend">
+            <h1 class="title_recommend"> Recomendações </h1>
+            <div>
+                <h1 class="top_5_recommend"> filme 1 </h1>
+                <h1 class="top_5_recommend"> filme 2 </h1>
+                <h1 class="top_5_recommend"> filme 3 </h1>
+                <h1 class="top_5_recommend"> filme 4 </h1>
+                <h1 class="top_5_recommend"> filme 5 </h1>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
