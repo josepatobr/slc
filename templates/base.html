@@ -11,7 +11,6 @@
         <link href="{% static 'css/signup.css' %}" rel="stylesheet">
         <link href="{% static 'css/login.css' %}" rel="stylesheet">
         <link href="{% static 'css/movie.css' %}" rel="stylesheet">
-
     </head>
 
     <body class="body">
@@ -36,6 +35,11 @@
                 <li>
 
                 </li>
+
+                <form action="{% url 'search' %}" method="get" style="display: inline;">
+                        <input type="text" name="input_navbar" class="input_navbar" placeholder="Pesquisar...">
+                        <button type="submit" class="btn_pesquisa">Pesquisa</button>
+                </form>
             </ul>
         </nav>
 

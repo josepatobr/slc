@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <h2> produto encontrado com sucesso </h2>>
+
+    <div class="home">    
+        <br><br>
+        <h1 class="titulo">filme encontrado</h1>
+    
+       <div class="card-produto">  
+            {% for movie in search_database %}
+                <div class="div-produto">
+                    <img src="{{ movie.movie_cover.url }}" width="300" height="300">
+                    <p class="inf_produto_titulo">{{ movie.title_movie }}</p>
+                    <a class="url_produto" href="{% url 'movie' movie.id %}" target="_blank">assistir filme</a>                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

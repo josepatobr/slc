@@ -1,9 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Movies
 
 def movie(request, movie_id):
-    movies = Movies.objects.filter(id=movie_id)   
+    movie_obj = get_object_or_404(Movies, id=movie_id)   
+    recomendados = Movies.objects.order_by("?")[:5]
+
     context = {
-        "movies": movies,
+        "movie": movie_obj,
+        "recomendados": recomendados,
     } 
     return render(request, "movie.html", context)

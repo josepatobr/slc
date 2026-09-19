@@ -1,8 +1,8 @@
 from django.shortcuts import render
-from movies.models import Movies, Series
+from movies.models import Movies
 
 def home(request):
-    movies = Movies.objects.all()   
+    movies = Movies.objects.all() 
     context = {
         "movies": movies,
     } 
@@ -10,13 +10,13 @@ def home(request):
 
 
 def search(request):
-    option = Movies, Series
+    option = Movies
 
     input_search = request.GET.get("input_navbar")
     if not input_search:
         return render(request, "search_erro.html")
 
-    search_database = option.objects.filter(name_product__icontains=input_search)
+    search_database = option.objects.filter(title_movie__icontains=input_search)
     
     if not search_database.exists():
         return render(request, "search_erro.html")

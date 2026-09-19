@@ -8,48 +8,67 @@
     font-family: 'Courier New', Courier, monospace;
     font-size: 50px;
     text-align: center;
+    text-decoration: underline;
 }
 
 
 .description_movie{
     border: 1px solid white;
     color: white;
-    width: 63%;
+    width: 69%;
     text-align: center;
     padding: 10px;
+
 }
 
 
-.card_recommend{
+.card_recommend {
     border: 1px solid white;
-    width: 30%;
-    display: flex;
-    left: 1300px;
-    position: relative;
-    bottom: 690px;
+    width: 25%;
+    float: right;
+    margin-right: 3%;
+    margin-top: -600px;
     color: white;
-    height: 600px;
+    height: auto;
+    min-height: 500px;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #111418;
 }
-
 .title_recommend{
     color: whitesmoke;
     font-family: 'Courier New', Courier, monospace;
-    font-size: 40px;
-    display: flex;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: underline;
+
 }
 .top_5_recommend{
     color: white;
-    border: 1px solid white;
+    border: none;
     display: flex;
     flex-direction: column;
     justify-content: center;
     justify-items: center;
     justify-self: center;
     position: relative;
+    font-size: 15px;
+    text-decoration: underline;
+    
 }
 
 .video{
     display: flex;
     position: relative;
-    right: 150px;
+    height: 70%;
+    width: 70%;
+}
+
+.card_movie_recommend {
+    border: 1px solid white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
 }
