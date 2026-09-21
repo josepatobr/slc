@@ -26,12 +26,16 @@ class Movies(models.Model):
     gener_movie = models.CharField(choices=Genero, blank=True, null=True)
 
     file_movie = models.FileField(upload_to=get_source_file_path)
-    hls_file = models.CharField(max_length=500, blank=True, null=True)
+    hls_playlist = models.FileField(upload_to="movies/hls/", blank=True, null=True)
     movie_cover = models.FileField(upload_to=get_source_file_path, default=None)
 
     duration_all = models.DurationField(null=True, blank=True)
     current_time = models.DurationField(default=timedelta(seconds=0))
 
+    def __str__(self):
+        return self.title
+
+    
     @property
     def duration_in_minutes(self):
         if self.duration_all:
