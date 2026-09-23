@@ -9,7 +9,7 @@
     
         <div class="card-movie">  
             <div class="div-movie">
-                <video src="{{ movie.file_movie.url }}" type="video/mp4" class="video" id="video" controls></video>
+                <video src="{{ movie.file_movie.url }}" type="video/mp4" class="video" id="Video" controls></video>
                 <p class="description_movie">DESCRIÇÃO: {{ movie.description }}</p>
             </div>
         </div>
@@ -29,3 +29,30 @@
         </div>
     </div>
 {% endblock %}
+
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+        const Get_video = document.getElementById("Video");
+        const videoSrc = '/media/movies/hls/movie_1.m3u8';
+
+        if (Get_video.canPlayType('application/vnd.apple.mpegurl')){
+            Get_video.src = videoSrc;
+            
+            Get_video.addEventListener('loadedmetadata', function () {
+                Get_video.play();
+            });
+        }
+
+        else if(Hls.isSupported()){
+            const hls = new Hls();
+            hls.loadSource(videoSrc)
+            hls.attachMedia(Get_video)    
+            hls.on(Hls.Events.MANIFEST_PARSED, function () {
+            Get_video.play();
+            });
+        } 
+        else {
+            console.error('Este navegador não é compatível com HLS.');
+        }
+    })
+</script>
